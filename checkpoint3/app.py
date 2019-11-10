@@ -15,3 +15,12 @@ def get_photo_tags(link):
     for tag in concepts:
         tags.append(tag['name'])
     return tags
+
+my_app = Flask(__name__)
+
+@my_app.route("/", methods=["GET", "POST"])
+def index():
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    my_app.run(debug=True)

@@ -19,7 +19,7 @@ def get_photo_tags(link):
     return tags
 
 @my_app.route("/", methods=["GET", "POST"])
-def upload():
+def index():
     img_data = None
     error = ""
     if request.method == "POST":
