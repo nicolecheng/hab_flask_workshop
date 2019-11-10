@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash
 import json, urllib
 
 # clarifai stuff
@@ -36,18 +36,26 @@ apple = "https://thumbs.dreamstime.com/z/perfect-green-appl-apple-isolated-" + \
 
 my_app = Flask(__name__)
 
-@my_app.route("/")
-def index(image=None):
-    print("sent an apple photo...", get_photo_tags(apple))
-    return render_template('index.html', image=None)
+# @my_app.route("/")
+# def index(image=None):
+#     print("sent an apple photo...", get_photo_tags(apple))
+#     return render_template('index.html', image=None)
 
 
 
-@my_app.route("/upload", methods=["GET", "POST"])
+@my_app.route("/", methods=["GET", "POST"])
 def upload():
-    img_url = request.form['img'] 
-    img_data = {"url": img_url, "description": get_photo_tags(img_url)}
-    return render_template('index.html', image=img_data)
+    img_data = None
+    error = ""
+    if request.method == "POST":
+        img_url = request.form['img'] 
+        try:
+            tags = get_photo_tags(img_url)
+            img_data = {"url": img_url, "description": tags}
+        except:
+            error = 'Please input a valid image URL.'
+    
+    return render_template('index.html', image=img_data, error=error)
 
 
 
