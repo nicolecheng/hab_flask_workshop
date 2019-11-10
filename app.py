@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 import json, urllib
 
 # clarifai stuff
@@ -28,28 +28,29 @@ def get_photo_tags(link):
     for tag in concepts:
         tags.append(tag['name'])
     return tags
+    
+
+apple = "https://thumbs.dreamstime.com/z/perfect-green-appl-apple-isolated-" + \
+"white-background-48734377.jpg"
 
 
 my_app = Flask(__name__)
 
 @my_app.route("/")
-def index():
-    return render_template('index.html', image=None)
-
-@my_app.route("/")
-def index():
+def index(image=None):
+    print("sent an apple photo...", get_photo_tags(apple))
     return render_template('index.html', image=None)
 
 
-@my_app.route("/")
-def search():
-    return render_template('')
+
+@my_app.route("/upload", methods=["GET", "POST"])
+def upload():
+    img_url = request.form['img'] 
+    img_data = {"url": img_url, "description": get_photo_tags(img_url)}
+    return render_template('index.html', image=img_data)
 
 
-@my_app.route("/")
-def results():
-    return render_template('')
 
 
 if __name__ == '__main__':
-    my_app.run()
+    my_app.run(debug=True)

@@ -5,14 +5,14 @@
     <title>Image Detector!</title>
 </head>
     <body>
-        {% if image is defined %}
+        {% if image == None %}
         <h1>Upload an image here!</h1>
         {% else %}
-        <img src={{ img.url }}>
+        <img src={{ image.url }}>
         <h1>Your image is...</h1>
-        <h6> {{ img.description }} </h6>
+        <h6> {{ image.description }} </h6>
         {% endif %}
-        <form action="/upload_image" method="POST">
+        <form action="/upload" method="POST">
             Image link:<br>
             <input type="text" name="img"><br>
             <input type="submit" value="Submit">
