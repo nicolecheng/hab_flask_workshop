@@ -28,12 +28,17 @@ def get_photo_tags(link):
     for tag in concepts:
         tags.append(tag['name'])
     return tags
+    
+
+apple = "https://thumbs.dreamstime.com/z/perfect-green-appl-apple-isolated-" + \
+"white-background-48734377.jpg"
 
 
 my_app = Flask(__name__)
 
 @my_app.route("/")
 def index():
+    print("sent an apple photo...", get_photo_tags(apple))
     return render_template('index.html')
 
 
@@ -45,6 +50,8 @@ def search():
 @my_app.route("/")
 def results():
     return render_template('')
+
+
 
 
 if __name__ == '__main__':
