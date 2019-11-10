@@ -34,7 +34,11 @@ my_app = Flask(__name__)
 
 @my_app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('index.html', image=None)
+
+@my_app.route("/")
+def index():
+    return render_template('index.html', image=None)
 
 
 @my_app.route("/")

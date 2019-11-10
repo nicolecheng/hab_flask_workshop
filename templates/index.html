@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Index page</title>
+    <title>Image Detector!</title>
 </head>
-<body>
-This is the index page!
-</body>
+    <body>
+        {% if image is defined %}
+        <h1>Upload an image here!</h1>
+        {% else %}
+        <img src={{ img.url }}>
+        <h1>Your image is...</h1>
+        <h6> {{ img.description }} </h6>
+        {% endif %}
+        <form action="/upload_image" method="POST">
+            Image link:<br>
+            <input type="text" name="img"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
 </html>
