@@ -1,25 +1,14 @@
-from flask import Flask, render_template, request, redirect, flash
-import json, urllib
-
-# clarifai stuff
+from flask import Flask, render_template, request
 from clarifai.rest import ClarifaiApp
 from clarifai.rest import Image as ClImage
 
+my_app = Flask(__name__)
 key = 'd8c6adff128c41d8a95a375cea3357dc'
 app = ClarifaiApp(api_key=key)
 
-# makes sure there's an http url type
-def clean_link(link):
-    if link.find("http") == -1:
-        return "http://"+link
-    return link
-
-# CLARIFAI API TOOLS
-
-
-# given a link to an image, returns a list of tags
+### CLARIFAI API TOOLS ###
+# Given a link to an image, returns a list of tags
 def get_photo_tags(link):
-    link = clean_link(link)
     model = app.models.get('general-v1.3')
     image = ClImage(url=link)
     u = model.predict([image])
@@ -28,20 +17,6 @@ def get_photo_tags(link):
     for tag in concepts:
         tags.append(tag['name'])
     return tags
-    
-
-apple = "https://thumbs.dreamstime.com/z/perfect-green-appl-apple-isolated-" + \
-"white-background-48734377.jpg"
-
-
-my_app = Flask(__name__)
-
-# @my_app.route("/")
-# def index(image=None):
-#     print("sent an apple photo...", get_photo_tags(apple))
-#     return render_template('index.html', image=None)
-
-
 
 @my_app.route("/", methods=["GET", "POST"])
 def upload():
@@ -53,7 +28,7 @@ def upload():
             tags = get_photo_tags(img_url)
             img_data = {"url": img_url, "description": tags}
         except:
-            error = 'Please input a valid image URL.'
+            error = 'Please input a valid image URL (starting with http://).'
     
     return render_template('index.html', image=img_data, error=error)
 

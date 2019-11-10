@@ -2,21 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Image Detector!</title>
+    <title>Image Tagger!</title>
 </head>
     <body>        
         {% if image == None %}
-        <h1>Upload an image here!</h1>
+            <h1>Upload an image here!</h1>
         {% else %}
-        <img src={{ image.url }}>
-        <h1>Your image is...</h1>
-        <h6> {{ image.description }} </h6>
+            <img src={{ image.url }}>
+            <h1>Your image is...</h1>
+            <h6> {{ image.description }} </h6>
         {% endif %}
+
         <form action="/" method="POST">
             Image link:<br>
             <input type="text" name="img"><br>
             <input type="submit" value="Submit">
         </form>
+
         <p> {{ error }} </p>
     </body>
 </html>
