@@ -1,0 +1,169 @@
+{
+   "status": {
+      "code": 10000,
+      "req_id": "f848f9904de3487aabffd668c177f768",
+      "description": "Ok"
+   },
+   "outputs": [
+      {
+         "created_at": "2019-11-10T22:52:00.308142404Z",
+         "id": "775eec8516084926bb5244f9199ca0eb",
+         "status": {
+            "code": 10000,
+            "description": "Ok"
+         },
+         "data": {
+            "concepts": [
+               {
+                  "id": "ai_mZ2tl6cW",
+                  "value": 0.9814114,
+                  "name": "health",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_786Zr311",
+                  "value": 0.976058,
+                  "name": "no person",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_gt6djlDq",
+                  "value": 0.96674293,
+                  "name": "juicy",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_3PlgVmlN",
+                  "value": 0.9617101,
+                  "name": "food",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_nl2sV1Hm",
+                  "value": 0.950765,
+                  "name": "nutrition",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_7D0mdp1W",
+                  "value": 0.9496565,
+                  "name": "delicious",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_xcBmQX0h",
+                  "value": 0.94247806,
+                  "name": "apple",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_Zn6HkfM3",
+                  "value": 0.92841196,
+                  "name": "fruit",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_ZrZ2XRhk",
+                  "value": 0.9021836,
+                  "name": "disjunct",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_NTTFwSHB",
+                  "value": 0.88050145,
+                  "name": "wet",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_rxcHpHks",
+                  "value": 0.85123014,
+                  "name": "isolated",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_ZsprRgCn",
+                  "value": 0.8495095,
+                  "name": "farming",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_tBcWlsCp",
+                  "value": 0.84542555,
+                  "name": "nature",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_b0c8t5Sw",
+                  "value": 0.8442664,
+                  "name": "juice",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_Lgf9BCM0",
+                  "value": 0.836141,
+                  "name": "vitamin",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_LxrzLJmf",
+                  "value": 0.8302642,
+                  "name": "bright",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_BnF6bkxQ",
+                  "value": 0.8301679,
+                  "name": "stranded",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_RMfvwS0c",
+                  "value": 0.8176351,
+                  "name": "round out",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_wBCrHPDb",
+                  "value": 0.81025606,
+                  "name": "leaf",
+                  "app_id": "main"
+               },
+               {
+                  "id": "ai_0mCQLwrm",
+                  "value": 0.80689263,
+                  "name": "healthy",
+                  "app_id": "main"
+               }
+            ]
+         },
+         "model": {
+            "created_at": "2016-03-09T17:11:39.608845Z",
+            "id": "aaa03c23b3724a16a56b629203edc62c",
+            "model_version": {
+               "created_at": "2016-07-13T01:19:12.147644Z",
+               "id": "aa9ca48295b37401f8af92ad1af0d91d",
+               "status": {
+                  "code": 21100,
+                  "description": "Model is trained and ready"
+               }
+            },
+            "output_info": {
+               "type": "concept",
+               "type_ext": "concept",
+               "message": "Show output_info with: GET /models/{model_id}/output_info"
+            },
+            "name": "general",
+            "app_id": "main",
+            "display_name": "General"
+         },
+         "input": {
+            "id": "4982da401c7b4eb09340c63eceaee3d2",
+            "data": {
+               "image": {
+                  "url": "https://thumbs.dreamstime.com/z/perfect-green-appl-apple-isolated-white-background-48734377.jpg"
+               }
+            }
+         }
+      }
+   ]
+}
