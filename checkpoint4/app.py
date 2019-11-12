@@ -20,7 +20,8 @@ my_app = Flask(__name__)
 
 @my_app.route("/", methods=["GET"])
 def index():
-    return render_template('index.html')
+    img_url = "https://thumbs.dreamstime.com/z/perfect-green-appl-apple-isolated-white-background-48734377.jpg"
+    return render_template('index.html', image=img_url)
 
 if __name__ == '__main__':
     my_app.run(debug=True)

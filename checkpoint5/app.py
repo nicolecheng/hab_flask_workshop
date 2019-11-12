@@ -18,9 +18,12 @@ def get_photo_tags(link):
 
 my_app = Flask(__name__)
 
-@my_app.route("/", methods=["GET"])
+@my_app.route("/", methods=["GET", "POST"])
 def index():
-    return render_template('index.html')
+    img_url = None
+    if request.method == "POST":
+        img_url = request.form['img']
+    return render_template('index.html', image=img_url)
 
 if __name__ == '__main__':
     my_app.run(debug=True)
