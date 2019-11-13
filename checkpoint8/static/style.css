@@ -1,7 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
+
+body {
+    font-family: 'Karla', sans-serif;
+
+}
+
 img {
-    width: 50vw;
+    width: 400px;
+}
+
+.container {
+    margin: 0 auto;
+    width: 50%;
+    padding: 20px;
+}
+
+input[type=text] {
+    font-family: 'Karla', sans-serif;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    font-family: 'Karla', sans-serif;
+    border: 0;
+    background: #069296;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: none;
+    margin-top: 5px;
+}
+
+h1 {
+    padding: 5px;
+    border-bottom: 3px solid #069296;
 }
 
 #error {
-    color: red;
+    color: #ff6426;
 }

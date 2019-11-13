@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Image Tagger!</title>
-    <link rel="stylesheet" href="static/style.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+
+
+    <title>Image Tagger</title>
 </head>
-    <body>        
-        <h1>Upload an image here!</h1>
-        <form action="/" method="POST">
-            Image link:<br>
-            <input type="text" name="img"><br>
-            <input type="submit" value="Submit">
-        </form>
+    <body> 
+        <div class="container">
+            <h1>Upload an image here!</h1>
+            <form action="/" method="POST">
+                <input type="text" name="img" placeholder="Image link"><br>
+                <input type="submit" value="Submit">
+            </form>
+
+        </div>       
+
     </body>
 </html>
