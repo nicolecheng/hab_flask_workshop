@@ -46,12 +46,12 @@ This workshop is an introduction to Flask and API integration.
 
 
 ## Additional Information
-Hack@Brown 2020
-Workshop: Flask
+Hack@Brown 2020 \
+Workshop: Flask \
 Date: Sun 11 17 2019
 
 
 ## Contributors
-* Nicole Cheng
-* Kevin Du
-* Katherine Sang
+Nicole Cheng \
+Kevin Du \
+Katherine Sang
