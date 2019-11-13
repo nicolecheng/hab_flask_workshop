@@ -20,17 +20,16 @@ def get_photo_tags(link):
 
 @my_app.route("/", methods=["GET", "POST"])
 def index():
-    img_data = None
+    img_url = ""
+    img_tags = None
     error = ""
     if request.method == "POST":
-        img_url = request.form['img'] 
         try:
-            tags = get_photo_tags(img_url)
-            img_data = {"url": img_url, "description": tags}
+            img_url = request.form['img']
+            img_tags = get_photo_tags(img_url)
         except:
-            error = 'Please input a valid image URL (starting with http://).'
-    
-    return render_template('index.html', image=img_data, error=error)
+            error = "Please input a valid image URL (starting with http://)."
+    return render_template('index.html', image=img_url, tags=img_tags, error=error)
 
 
 

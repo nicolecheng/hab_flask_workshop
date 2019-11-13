@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Image Tagger!</title>
     <link rel="stylesheet" href="static/style.css">
+    <title>Image Tagger!</title>
 </head>
     <body>        
         {% if image == "" %}
             <h1>Upload an image here!</h1>
         {% else %}
-            <img src={{ image.url }}>
+            <img src={{ image }}>
             <h1>Your image is tagged...</h1>
-            <h6> {{ image.description }} </h6>
+            <h6> {{ tags }} </h6>
         {% endif %}
         <form action="/" method="POST">
             Image link:<br>
             <input type="text" name="img"><br>
             <input type="submit" value="Submit">
         </form>
-        <p> {{ error }} </p>
     </body>
 </html>

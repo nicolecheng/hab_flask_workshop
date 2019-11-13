@@ -21,9 +21,15 @@ my_app = Flask(__name__)
 @my_app.route("/", methods=["GET", "POST"])
 def index():
     img_url = ""
+    img_tags = None
+    error = ""
     if request.method == "POST":
-        img_url = request.form['img']
-    return render_template('index.html', image=img_url)
+        try:
+            img_url = request.form['img']
+            img_tags = get_photo_tags(img_url)
+        except:
+            error = "Please input a valid image URL (starting with http://)."
+    return render_template('index.html', image=img_url, tags=img_tags, error=error)
 
 if __name__ == '__main__':
     my_app.run(debug=True)
